@@ -5,14 +5,24 @@ function createCard(name, description, pictureUrl, starts, ends, location) {
         <img src="${pictureUrl}" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">${name}</h5>
-          <h6 class="card-subtitle" mb-2 text-muted style="color: gray">${location}</h6>
-          <p class="card-text">${description}</p>
+          <h6 class="card-subtitle" mb-2 text-muted style="color: gray; margin-bottom: 10px;">${location}</h6>
+          <p class="card-text" >${description}</p>
         </div>
         <div class="card-footer">
         <p>${starts}-${ends}</p>
         </div>
       </div>
     </div>
+    `;
+}
+
+function errorAlert(e) {
+    return `
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            ${e}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <span aria-hidden="true">&times;</span>
+        </div>
     `;
 }
 
@@ -23,7 +33,11 @@ window.addEventListener("DOMContentLoaded", async () => {
         const response = await fetch(url);
 
         if (!response.ok) {
-            throw new Error("Reponse not ok");
+            const e = "An error happened!";
+            console.log(e);
+            const html = errorAlert(e);
+            const column = document.querySelector(".row");
+            column.innerHTML += html;
         } else {
             const data = await response.json();
 
@@ -57,6 +71,9 @@ window.addEventListener("DOMContentLoaded", async () => {
             }
         }
     } catch (e) {
-        console.log("error", error);
+        console.log(e);
+        const html = errorAlert(e);
+        const error = document.querySelector(".row");
+        error.innerHTML += html;
     }
 });
