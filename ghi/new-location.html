@@ -65,6 +65,7 @@
                             <form id="create-location-form">
                                 <div class="form-floating mb-3">
                                     <input
+                                    name="name"
                                         placeholder="Name"
                                         required
                                         type="text"
@@ -74,6 +75,7 @@
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input
+                                    name="room_count"
                                         placeholder="Room count"
                                         required
                                         type="number"
@@ -83,6 +85,7 @@
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input
+                                    name="city"
                                         placeholder="City"
                                         required
                                         type="text"
@@ -92,6 +95,8 @@
                                 </div>
                                 <div class="mb-3">
                                     <select
+                                    name="state"
+                                    title="select"
                                         required
                                         id="state"
                                         class="form-select">
@@ -100,7 +105,7 @@
                                         </option>
                                     </select>
                                 </div>
-                                <button class="btn btn-primary">Create</button>
+                                <button type="submit"btn btn-primary">Create</button>
                             </form>
                         </div>
                     </div>
