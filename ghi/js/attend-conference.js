@@ -44,9 +44,12 @@ window.addEventListener("DOMContentLoaded", async () => {
                     formTag.reset();
                     const newAttendee = await response.json();
                     console.log(newAttendee);
-                    selectDiv.classList.add("d-none");
                     const alertDiv = document.getElementById("success-message");
                     alertDiv.classList.remove("d-none");
+                    const attendeeForm = document.getElementById(
+                        "create-attendee-form"
+                    );
+                    attendeeForm.classList.add("d-none");
                 }
             });
         }
