@@ -9,8 +9,8 @@
             rel="stylesheet"
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
             crossorigin="anonymous" />
-        <title>New Conference :: Conference GO!</title>
-        <script type="module" src="js/new-conference.js"></script>
+        <title>New Presentation :: Conference GO!</title>
+        <script type="module" src="js/new-presentation.js"></script>
     </head>
     <body>
         <header>
@@ -46,7 +46,7 @@
                             </li>
                             <li class="nav-item">
                                 <a
-                                    class="nav-link active"
+                                    class="nav-link"
                                     aria-current="page"
                                     href="new-conference.html"
                                     >New conference</a
@@ -54,7 +54,7 @@
                             </li>
                             <li class="nav-item">
                                 <a
-                                    class="nav-link"
+                                    class="nav-link active"
                                     aria-current="page"
                                     href="new-presentation.html"
                                     >New presentation</a
@@ -87,89 +87,78 @@
                 <div class="row">
                     <div class="offset-3 col-6">
                         <div class="shadow p-4 mt-4">
-                            <h1>Create a new conference</h1>
-                            <form id="create-conference-form">
+                            <h1>Create a new presentation</h1>
+                            <form id="create-presentation-form">
                                 <div class="form-floating mb-3">
                                     <input
-                                        placeholder="Name"
+                                        placeholder="Presenter Name"
                                         required
                                         type="text"
-                                        name="name"
-                                        id="name"
+                                        name="presenter_name"
+                                        id="presenter_name"
                                         class="form-control" />
-                                    <label for="name">Name</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input
-                                        placeholder="Starts"
-                                        required
-                                        type="date"
-                                        name="starts"
-                                        id="starts"
-                                        class="form-control" />
-                                    <label for="starts">Starts</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input
-                                        placeholder="Ends"
-                                        required
-                                        type="date"
-                                        name="ends"
-                                        id="ends"
-                                        class="form-control" />
-                                    <label for="ends">Ends</label>
+                                    <label for="presenter_name"
+                                        >Presenter Name</label
+                                    >
                                 </div>
                                 <div class="mb-3">
-                                    <label for="description" class="form-label"
-                                        >Description</label
+                                    <label
+                                        for="presenter_email"
+                                        class="form-label"
+                                        >Presenter Email</label
+                                    >
+                                    <input
+                                        type="presenter_email"
+                                        class="form-control"
+                                        name="presenter_email"
+                                        id="presenter_email"
+                                        placeholder="name@example.com" />
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input
+                                        placeholder="Company name"
+                                        type="text"
+                                        name="company_name"
+                                        id="company_name"
+                                        class="form-control" />
+                                    <label for="company_name"
+                                        >Company Name</label
+                                    >
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input
+                                        placeholder="Title"
+                                        required
+                                        type="text"
+                                        name="title"
+                                        id="title"
+                                        class="form-control" />
+                                    <label for="title">Title</label>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="synopsis" class="form-label"
+                                        >Synopsis</label
                                     >
                                     <textarea
                                         class="form-control"
                                         required
                                         type="text"
-                                        name="description"
-                                        id="description"
+                                        name="synopsis"
+                                        id="synopsis"
                                         rows="3"></textarea>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input
-                                        placeholder="Max Presentations"
-                                        required
-                                        type="number"
-                                        name="max_presentations"
-                                        id="max_presentations"
-                                        class="form-control" />
-                                    <label for="max_presentations"
-                                        >Max Presentations</label
-                                    >
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input
-                                        placeholder="Max Attendees"
-                                        required
-                                        type="number"
-                                        name="max_attendees"
-                                        id="max_attendees"
-                                        class="form-control" />
-                                    <label for="max_attendees"
-                                        >Max Attendees</label
-                                    >
                                 </div>
                                 <div class="mb-3">
                                     <select
                                         required
-                                        title="location"
-                                        id="location"
-                                        name="location"
+                                        id="conferences"
+                                        name="conferences"
                                         class="form-select">
                                         <option selected value="">
-                                            Choose a location
+                                            Choose a conference
                                         </option>
                                     </select>
                                 </div>
-                                <button class="btn btn-primary" type="submit">
-                                    Create
-                                </button>
+                                <button class="btn btn-primary">Create</button>
                             </form>
                         </div>
                     </div>
