@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", async () => {
             formTag.addEventListener("submit", async (event) => {
                 event.preventDefault();
                 const formData = new FormData(formTag);
-                const conferenceid = Object.fromEntries(formData).conference;
+                const conferenceid = Object.fromEntries(formData).conferences;
 
                 const presenter_name =
                     Object.fromEntries(formData).presenter_name;
