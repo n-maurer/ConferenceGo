@@ -29,7 +29,7 @@ class LocationDetailEncoder(ModelEncoder):
 
 class ConferenceListEncoder(ModelEncoder):
     model = Conference
-    properties = ["name"]
+    properties = ["name","id"]
 
 
 class ConferenceDetailEncoder(ModelEncoder):
@@ -236,6 +236,8 @@ def api_list_states(request):
         states = State.objects.all().order_by('name')
         state_list = []
         for state in states:
-            state_dict = {state.name:state.abbreviation}
-            state_list.append(state_dict)
+            # state_dict = {state.name:state.abbreviation}
+            # state_list.append(state_dict)
+            values = {"name": state.name, "abbreviation": state.abbreviation}
+            state_list.append(values)
         return JsonResponse({"states": state_list})

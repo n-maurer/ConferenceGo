@@ -11,7 +11,6 @@
             crossorigin="anonymous" />
         <title>New Presentation :: Conference GO!</title>
         <script type="module" src="js/new-presentation.js"></script>
-        <script type="module" src="./js/checkStatus.js"></script>
     </head>
     <body>
         <header>
@@ -39,7 +38,6 @@
                             </li>
                             <li class="nav-item">
                                 <a
-                                    id="hidden-location"
                                     class="nav-link d-none"
                                     aria-current="page"
                                     href="new-location.html"
@@ -48,7 +46,6 @@
                             </li>
                             <li class="nav-item">
                                 <a
-                                    id="hidden-conference"
                                     class="nav-link d-none"
                                     aria-current="page"
                                     href="new-conference.html"
@@ -71,7 +68,7 @@
                                 placeholder="Search conferences"
                                 aria-label="Search" />
                             <button
-                                class="btn btn-outline-success me-2"
+                                class="btn btn-outline-success"
                                 type="submit">
                                 Search
                             </button>
@@ -94,28 +91,27 @@
                             <form id="create-presentation-form">
                                 <div class="form-floating mb-3">
                                     <input
-                                        placeholder="Presenter Name"
+                                        placeholder="Presenter name"
                                         required
                                         type="text"
                                         name="presenter_name"
                                         id="presenter_name"
                                         class="form-control" />
                                     <label for="presenter_name"
-                                        >Presenter Name</label
+                                        >Presenter name</label
                                     >
                                 </div>
-                                <div class="mb-3">
-                                    <label
-                                        for="presenter_email"
-                                        class="form-label"
-                                        >Presenter Email</label
-                                    >
+                                <div class="form-floating mb-3">
                                     <input
-                                        type="presenter_email"
-                                        class="form-control"
+                                        placeholder="Presenter email"
+                                        required
+                                        type="email"
                                         name="presenter_email"
                                         id="presenter_email"
-                                        placeholder="name@example.com" />
+                                        class="form-control" />
+                                    <label for="presenter_email"
+                                        >Presenter email</label
+                                    >
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input
@@ -125,7 +121,7 @@
                                         id="company_name"
                                         class="form-control" />
                                     <label for="company_name"
-                                        >Company Name</label
+                                        >Company name</label
                                     >
                                 </div>
                                 <div class="form-floating mb-3">
@@ -139,22 +135,19 @@
                                     <label for="title">Title</label>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="synopsis" class="form-label"
-                                        >Synopsis</label
-                                    >
+                                    <label for="synopsis">Synopsis</label>
                                     <textarea
                                         class="form-control"
-                                        required
-                                        type="text"
-                                        name="synopsis"
                                         id="synopsis"
-                                        rows="3"></textarea>
+                                        rows="3"
+                                        name="synopsis"
+                                        class="form-control"></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <select
                                         required
-                                        id="conferences"
-                                        name="conferences"
+                                        name="conference"
+                                        id="conference"
                                         class="form-select">
                                         <option selected value="">
                                             Choose a conference

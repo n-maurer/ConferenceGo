@@ -1,10 +1,12 @@
+import { NavLink } from "react-router-dom";
+
 function Nav() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
-                <a className="navbar-brand" href="">
+                <NavLink className="navbar-brand" to="">
                     Conference GO!
-                </a>
+                </NavLink>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -20,40 +22,46 @@ function Nav() {
                     id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a
+                            <NavLink
                                 className="nav-link active"
                                 aria-current="page"
-                                href="/">
+                                to="/">
                                 Home
-                            </a>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <a
+                            <NavLink
                                 id="hidden-location"
                                 className="nav-link"
                                 aria-current="page"
-                                href="new-location.html">
+                                to="/locations/new">
                                 New Location
-                            </a>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <a
+                            <NavLink
                                 id="hidden-conference"
                                 className="nav-link "
                                 aria-current="page"
-                                href="new-conference.html">
+                                to="/conferences/new">
                                 New Conference
-                            </a>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <a
+                            <NavLink
                                 className="nav-link"
                                 aria-current="page"
-                                href="new-presentation.html">
+                                to="/presentations/new">
                                 New presentation
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
+                    <NavLink
+                        className="btn btn-primary"
+                        aria-current="page"
+                        to="/attendees/new ">
+                        Attend!
+                    </NavLink>
                 </div>
             </div>
         </nav>
